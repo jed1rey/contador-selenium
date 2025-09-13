@@ -9,20 +9,20 @@ service = Service(executable_path='./chromedriver.exe')
 # Instancia do navegador
 driver = webdriver.Chrome(service=service)
 
-# Navegar para a página local do contador
-driver.get('http://127.0.0.1:5500/contador-cliques/src/')  # ajuste para seu caminho real
+# URL correta do Live Server
+driver.get('http://127.0.0.1:5500/src/index.html')
 
-# Encontrar o botão (id correto)
+# Encontrar o botão
 botao_contar = driver.find_element(By.ID, "botao-contar")
 
-# Clicar 10 vezes
+# Clicar 10 vezes e validar
 for i in range(10):
     botao_contar.click()
     WebDriverWait(driver, 5).until(
         lambda d: len(d.find_elements(By.CSS_SELECTOR, "#historico li")) == i + 1
     )
 
-# Verificar se 10 números foram exibidos
+# Verificar se 10 cliques foram registrados
 lista_cliques = driver.find_elements(By.CSS_SELECTOR, "#historico li")
 assert len(lista_cliques) == 10, "Quantidade de cliques não corresponde!"
 
@@ -33,5 +33,6 @@ for idx, li in enumerate(lista_cliques, start=1):
 
 print("✅ Teste passou com sucesso!")
 
+# Espera usuário finalizar
 input("Pressione Enter para fechar o navegador...")
 driver.quit()
