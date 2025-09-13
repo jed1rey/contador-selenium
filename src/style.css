@@ -1,0 +1,80 @@
+/* Fonte divertida */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: radial-gradient(circle at top left, #ff9ff3, #7efff5, #feca57);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  color: #222;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 60px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+  backdrop-filter: blur(6px);
+  border: 3px dashed #ff9ff3;
+}
+
+h1 {
+  color: #ff6b6b;
+  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+#botao-contar {
+  background: linear-gradient(135deg, #5f27cd, #341f97);
+  color: #feca57;
+  border: 2px solid #feca57;
+  padding: 12px 18px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+
+#botao-contar:hover {
+  background: linear-gradient(135deg, #341f97, #5f27cd);
+  transform: scale(1.05) rotate(-1deg);
+}
+
+#historico {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+#historico li {
+  background: #1dd1a1;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  border-radius: 6px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+#historico li:nth-child(even) {
+  background: #48dbfb;
+}
+
+#historico li:hover {
+  transform: translateX(4px) rotate(1deg);
+}
